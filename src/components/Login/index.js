@@ -80,9 +80,9 @@ class Login extends Component {
     } = this.state
 
     const jwtToken = Cookies.get('jwt_token')
-    /* if (jwtToken !== undefined) {
+    if (jwtToken !== undefined) {
       return <Redirect to="/" />
-    } */
+    }
     return (
       <LoginContainer>
         <LoginFormContainer>

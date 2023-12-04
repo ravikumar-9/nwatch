@@ -1,2 +1,4 @@
-const Home = () => <h1>g</h1>
+import Header from '../Header'
+
+const Home = () => <Header />
 export default Home
