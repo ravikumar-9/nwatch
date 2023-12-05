@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-export const SidebarContainer = styled.div`
+export const SidebarContainer = styled.nav`
   @media screen and (max-width: 767px) {
     display: none;
   }
   width: 15%;
   background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export const SidebarItemContainer = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: max-content;
   justify-content: space-between;
   background-color: transparent;
   border: none;

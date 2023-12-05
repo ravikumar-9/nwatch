@@ -88,39 +88,46 @@ class Login extends Component {
         <LoginFormContainer>
           <NxtWatchLogo
             src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-            alt="nxt watch logo"
+            alt="website logo"
           />
           <LoginForm onSubmit={this.onSubmitForm}>
             <FieldContainer>
-              <Label>USERNAME</Label>
+              <Label htmlFor="username">USERNAME</Label>
               <InputField
                 type="text"
                 placeholder="Username"
                 value={username}
+                id="username"
                 onChange={this.onChangeUsername}
               />
             </FieldContainer>
             <FieldContainer>
-              <Label>PASSWORD</Label>
+              <Label htmlFor="password">PASSWORD</Label>
               {isChecked ? (
                 <InputField
                   type="text"
                   placeholder="Password"
                   value={password}
+                  id="password"
                   onChange={this.onChangePassword}
                 />
               ) : (
                 <InputField
                   type="password"
                   placeholder="Password"
+                  id="password"
                   onChange={this.onChangePassword}
                   value={password}
                 />
               )}
             </FieldContainer>
             <CheckboxContainer>
-              <PassCheckbox type="checkbox" onClick={this.showPassword} />
-              <Label>Show Password</Label>
+              <PassCheckbox
+                type="checkbox"
+                onClick={this.showPassword}
+                id="check"
+              />
+              <Label htmlFor="check">Show Password</Label>
             </CheckboxContainer>
             <LoginButton type="submit">Login</LoginButton>
             {showErrorMessage ? (

@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import {TiHome} from 'react-icons/ti'
 
@@ -11,6 +11,8 @@ import {GrGamepad} from 'react-icons/gr'
 import {HiOutlineSaveAs} from 'react-icons/hi'
 
 import WatchContext from '../../context/WatchContext'
+
+import './sidebar.css'
 
 import {
   SidebarContainer,
@@ -26,6 +28,11 @@ import {
 
 class Sidebar extends Component {
   render() {
+    const {match} = this.props
+    // console.log(match)
+    const {url} = match
+    console.log(url)
+
     return (
       <WatchContext.Consumer>
         {value => {
@@ -35,33 +42,71 @@ class Sidebar extends Component {
             <>
               <SidebarContainer theme={isDarkTheme}>
                 <SidebarItemsContainer>
-                  <Link to="/" className="item-link">
+                  <Link
+                    to="/"
+                    className={url === '/' ? 'active-tab' : 'inactive-tab'}
+                  >
                     <SidebarItemContainer>
-                      <TiHome height={40} width={40} color="red" size={24} />
+                      <TiHome
+                        height={40}
+                        width={40}
+                        color={url === '/' ? 'red' : 'black'}
+                        size={24}
+                      />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Home
                       </SidebarItemHeading>
                     </SidebarItemContainer>
                   </Link>
-                  <Link to="/trending" className="item-link">
+                  <Link
+                    to="/trending"
+                    className={
+                      url === '/trending' ? 'active-tab' : 'inactive-tab'
+                    }
+                  >
                     <SidebarItemContainer>
-                      <AiFillFire height={40} width={40} size={24} />
+                      <AiFillFire
+                        height={40}
+                        width={40}
+                        size={24}
+                        color={url === '/trending' ? 'red' : 'black'}
+                      />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Trending
                       </SidebarItemHeading>
                     </SidebarItemContainer>
                   </Link>
-                  <Link to="/gaming" className="item-link">
+                  <Link
+                    to="/gaming"
+                    className={
+                      url === '/gaming' ? 'active-tab' : 'inactive-tab'
+                    }
+                  >
                     <SidebarItemContainer>
-                      <GrGamepad height={40} width={40} size={24} />
+                      <GrGamepad
+                        height={40}
+                        width={40}
+                        size={24}
+                        color={url === '/gaming' ? 'red' : 'black'}
+                      />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Gaming
                       </SidebarItemHeading>
                     </SidebarItemContainer>
                   </Link>
-                  <Link to="/saved-videos" className="item-link">
+                  <Link
+                    to="/saved-videos"
+                    className={
+                      url === '/saved-videos' ? 'active-tab' : 'inactive-tab'
+                    }
+                  >
                     <SidebarItemContainer>
-                      <HiOutlineSaveAs height={40} width={40} size={24} />
+                      <HiOutlineSaveAs
+                        height={40}
+                        width={40}
+                        size={24}
+                        color={url === '/saved-videos' ? 'red' : 'black'}
+                      />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Saved Videos
                       </SidebarItemHeading>
@@ -98,4 +143,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar
+export default withRouter(Sidebar)

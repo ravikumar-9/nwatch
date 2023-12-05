@@ -1,0 +1,10 @@
+.active-tab {
+  background-color: azure;
+  width: 100%;
+  text-decoration: none;
+}
+.inactive-tab {
+  background-color: transparent;
+  width: 100%;
+  text-decoration: none;
+}

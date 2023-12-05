@@ -1,4 +1,11 @@
 import Header from '../Header'
 
-const Home = () => <Header />
+import Sidebar from '../Sidebar'
+
+const Home = () => (
+  <>
+    <Header />
+    <Sidebar />
+  </>
+)
 export default Home

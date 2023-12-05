@@ -90,3 +90,61 @@ export const LogoutButtonsContainer = styled.div`
   margin: auto;
   justify-content: space-between;
 `
+export const SmallDevicesHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
+  @media screen and (min-width: 576px) {
+    display: none;
+  }
+`
+
+export const SmallDeviceLogoContainer = styled.div`
+  width: 30%;
+`
+
+export const SmallDeviceLogo = styled.img`
+  height: 30px;
+  width: 130px;
+  margin-left: 10px;
+`
+export const SmallDeviceThemesContainer = styled.div`
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+`
+export const SmallDeviceThemeButton = styled.button`
+  height: max-content;
+  width: max-content;
+  border: none;
+  outline: none;
+  background-color: transparent;
+`
+export const HamburgerButton = styled.button`
+  height: max-content;
+  width: max-content;
+  border: none;
+  outline: none;
+  margin-left: 15px;
+  background-color: transparent;
+`
+export const SmallDeviceLogoutButton = styled.button`
+  height: max-content;
+  width: max-content;
+  border: none;
+  outline: none;
+  background-color: transparent;
+`
+export const SmallDevicePopContainer = styled.div`
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  height: 50px;
+  margin: 0px;
+`
