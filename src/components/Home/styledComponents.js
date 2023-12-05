@@ -126,3 +126,70 @@ export const SearchIconButton = styled.button`
   background-color: transparent;
   border-left-color: ${props => (props.themeColor ? 'white' : 'black')};
 `
+export const LoaderContainer = styled.div`
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+`
+export const HomeSectionVideosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+`
+export const HomeFailureContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 90%;
+  background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
+`
+export const HomeFailureImage = styled.img`
+  @media screen and (min-width: 576px) {
+    height: 180px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 575px) {
+    height: 150px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+`
+export const HomeFailureHeading = styled.h1`
+  font-weight: bold;
+  line-height: 0.6;
+  @media screen and (min-width: 576px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 17px;
+  }
+
+  text-align: center;
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+`
+export const HomeFailureDescription = styled.p`
+  font-size: 14px;
+  text-align: center;
+  width: 70%;
+  line-height: 0.6;
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+`
+export const RetryButton = styled.button`
+  background-color: #4f46e5;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  height: 34px;
+  width: 90px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+`

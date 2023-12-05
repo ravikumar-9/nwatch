@@ -14,7 +14,7 @@ export const LargeDeviceHeader = styled.div`
 export const LargeDeviceThemeContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 35%;
+  width: 30%;
   justify-content: space-between;
   background-color: transparent;
   margin-right: 14px;
@@ -34,6 +34,7 @@ export const ThemeButton = styled.button`
   border: none;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
 `
 export const LogoutButton = styled.button`
   height: 30px;
@@ -41,6 +42,7 @@ export const LogoutButton = styled.button`
   border: 1px solid #4f46e5;
   background-color: transparent;
   color: #4f46e5;
+  cursor: pointer;
 `
 export const ProfileImage = styled.img`
   height: 34px;
