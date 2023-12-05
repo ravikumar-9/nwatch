@@ -4,6 +4,8 @@ import {Component} from 'react'
 
 import WatchContext from './context/WatchContext'
 
+import ProtectedRoute from './components/ProtectedRoute'
+
 import Login from './components/Login'
 
 import Home from './components/Home'
@@ -27,7 +29,7 @@ class App extends Component {
       >
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Home} />
+          <ProtectedRoute exact path="/" component={Home} />
         </Switch>
       </WatchContext.Provider>
     )

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SidebarContainer = styled.nav`
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 575px) {
     display: none;
   }
   width: 15%;
@@ -28,10 +28,10 @@ export const SidebarItemContainer = styled.li`
 
 export const SidebarItemHeading = styled.h1`
   font-weight: bold;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 576px) {
     font-size: 13px;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 575px) {
     font-size: 12px;
   }
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
@@ -43,7 +43,7 @@ export const SidebarItemsContainer = styled.nav`
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 40px;
+  margin-top: 15px;
 `
 export const ContactUs = styled.p`
   font-weight: bold;

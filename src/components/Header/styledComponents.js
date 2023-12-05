@@ -5,6 +5,7 @@ export const LargeDeviceHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 10vh;
+  width: 100%;
   background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
   @media screen and (max-width: 575px) {
     display: none;
