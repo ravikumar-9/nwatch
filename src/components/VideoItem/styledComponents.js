@@ -4,14 +4,18 @@ export const HomeVideoItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 230px;
-  margin: 10px;
+  margin: 7px;
+  list-style-type: none;
   @media screen and (min-width: 576px) {
-    width: 48%;
+    width: 46%;
+    height: 300px;
   }
 
   @media screen and (max-width: 575px) {
-    width: 96%;
+    width: 98%;
+    flex-grow: 4;
+    flex-shrink: 0;
+    height: 290px;
   }
 `
 export const VideoThumbnailImage = styled.img`
@@ -29,18 +33,18 @@ export const ChannelLogo = styled.img`
     width: 40px;
   }
   @media screen and (min-width: 576px and max-width: 767px) {
-    height: 37px;
-    width: 40px;
+    height: 50px;
+    width: 60px;
   }
   @media screen and (max-width: 575px) {
-    height: 30px;
-    width: 40px;
+    height: 40px;
+    width: 50px;
   }
 `
 export const VideoDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
 `
 export const VideoTitle = styled.h1`
   font-weight: bold;
@@ -57,6 +61,7 @@ export const VideoTitle = styled.h1`
 `
 export const ChannelName = styled.h1`
   font-weight: bold;
+  line-height: 0.6;
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
   @media screen and (min-width: 768px) {
     font-size: 13px;
@@ -70,5 +75,13 @@ export const ChannelName = styled.h1`
 `
 export const VideoViewsCount = styled.p`
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 0.6;
+  margin-right: 5px;
+`
+export const VideoViewsAndDateContainer = styled.div`
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
 `

@@ -73,6 +73,7 @@ export const CloseButton = styled.button`
   background-color: none;
 `
 export const HomeSectionContainer = styled.div`
+  background-color: transparent;
   @media screen and (min-width: 576px) {
     display: flex;
     flex-direction: column;
@@ -108,6 +109,7 @@ export const SearchBar = styled.input`
   outline: 1px;
   border: ${props => (props.themeColor ? 'white' : 'white')};
   height: 100%;
+  font-size: 14px;
   @media screen and (min-width: 576px) {
     width: 90%;
   }
@@ -192,9 +194,53 @@ export const HomeSectionVideosContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-  flex-wrap: wrap;
   overflow-x: none;
   margin-top: 10px;
+  background-color: transparent;
   width: 100%;
   height: 70vh;
+  @media screen and (min-width: 576px) {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+`
+export const NoSearchResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+`
+
+export const NoSearchResultsImage = styled.img`
+  @media screen and (min-width: 576px) {
+    height: 160px;
+    width: 300px;
+  }
+  height: 150px;
+  width: 190px;
+`
+
+export const NoSearchResultsHeading = styled.h1`
+  font-weight: bold;
+  line-height: 0.6;
+  @media screen and (min-width: 576px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 17px;
+  }
+
+  text-align: center;
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+`
+export const NoSearchResultsDescription = styled.p`
+  font-size: 14px;
+  text-align: center;
+  width: 70%;
+  line-height: 0.9;
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `

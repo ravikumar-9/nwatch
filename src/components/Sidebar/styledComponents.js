@@ -5,7 +5,7 @@ export const SidebarContainer = styled.nav`
     display: none;
   }
   width: 15%;
-  background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
+  background-color: ${props => (props.theme === true ? '#212121' : '#cccccc')};
   height: 90vh;
   display: flex;
   flex-direction: column;

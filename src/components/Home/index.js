@@ -36,6 +36,10 @@ import {
   HomeFailureDescription,
   RetryButton,
   HomeSectionVideosContainer,
+  NoSearchResultsContainer,
+  NoSearchResultsImage,
+  NoSearchResultsHeading,
+  NoSearchResultsDescription,
 } from './styledComponents'
 
 const homeApIStatusConstants = {
@@ -98,6 +102,12 @@ class Home extends Component {
     }
   }
 
+  onChangeSearchInput = event => {
+    this.setState({videosSearchInput: event.target.value})
+  }
+
+  onClickSearchIcon = () => this.getHomeSectionVideos()
+
   onRemoveBanner = () => {
     this.setState({isShowBanner: false})
   }
@@ -138,14 +148,42 @@ class Home extends Component {
     </HomeFailureContainer>
   )
 
-  renderHomeSuccessView = () => {
+  renderHomeSuccessView = isDarkTheme => {
     const {homeSectionVideos} = this.state
     return (
-      <HomeSectionVideosContainer>
-        {homeSectionVideos.map(eachItem => (
-          <VideoItem key={eachItem.id} itemDetails={eachItem} />
-        ))}
-      </HomeSectionVideosContainer>
+      <>
+        {homeSectionVideos.length !== 0 ? (
+          <HomeSectionVideosContainer>
+            {homeSectionVideos.map(eachItem => (
+              <VideoItem
+                key={eachItem.id}
+                itemDetails={eachItem}
+                themeDetails={isDarkTheme}
+              />
+            ))}
+          </HomeSectionVideosContainer>
+        ) : (
+          <NoSearchResultsContainer>
+            <NoSearchResultsImage
+              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+              alt="no videos"
+            />
+            <NoSearchResultsHeading theme={isDarkTheme}>
+              No Search results found
+            </NoSearchResultsHeading>
+            <NoSearchResultsDescription theme={isDarkTheme}>
+              Try different keywords or remove search filter
+            </NoSearchResultsDescription>
+            <RetryButton
+              type="button"
+              theme={isDarkTheme}
+              onClick={this.onClickRetry}
+            >
+              Retry
+            </RetryButton>
+          </NoSearchResultsContainer>
+        )}
+      </>
     )
   }
 
@@ -204,8 +242,12 @@ class Home extends Component {
                     </BannerGetNowButton>
                   </BannerContainer>
                   <SearchBarContainer>
-                    <SearchBar type="search" themeColor={isDarkTheme} />
-                    <SearchIconButton>
+                    <SearchBar
+                      type="search"
+                      themeColor={isDarkTheme}
+                      onChange={this.onChangeSearchInput}
+                    />
+                    <SearchIconButton onClick={this.onClickSearchIcon}>
                       <BiSearchAlt2 size="24" />
                     </SearchIconButton>
                   </SearchBarContainer>
