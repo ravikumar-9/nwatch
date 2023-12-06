@@ -14,6 +14,8 @@ import Header from '../Header'
 
 import Sidebar from '../Sidebar'
 
+import VideoItem from '../VideoItem'
+
 import {
   HomeSectionMainContainer,
   HomeSectionContainer,
@@ -33,6 +35,7 @@ import {
   HomeFailureHeading,
   HomeFailureDescription,
   RetryButton,
+  HomeSectionVideosContainer,
 } from './styledComponents'
 
 const homeApIStatusConstants = {
@@ -123,7 +126,7 @@ class Home extends Component {
         Oops! Something Went Wrong
       </HomeFailureHeading>
       <HomeFailureDescription theme={isDarkTheme}>
-        We have some trouble to complete your request. Please try again.
+        We are having some trouble.
       </HomeFailureDescription>
       <RetryButton
         type="button"
@@ -135,6 +138,17 @@ class Home extends Component {
     </HomeFailureContainer>
   )
 
+  renderHomeSuccessView = () => {
+    const {homeSectionVideos} = this.state
+    return (
+      <HomeSectionVideosContainer>
+        {homeSectionVideos.map(eachItem => (
+          <VideoItem key={eachItem.id} itemDetails={eachItem} />
+        ))}
+      </HomeSectionVideosContainer>
+    )
+  }
+
   renderHomeSectionVideos = isDarkTheme => {
     console.log(isDarkTheme)
     const {homeApiStatus} = this.state
@@ -143,6 +157,8 @@ class Home extends Component {
         return this.renderHomeLoader()
       case homeApIStatusConstants.failure:
         return this.renderHomeFailureSection(isDarkTheme)
+      case homeApIStatusConstants.success:
+        return this.renderHomeSuccessView(isDarkTheme)
       default:
         return null
     }

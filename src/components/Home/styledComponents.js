@@ -134,13 +134,7 @@ export const LoaderContainer = styled.div`
   align-items: center;
   margin-left: auto;
 `
-export const HomeSectionVideosContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow-y: auto;
-`
+
 export const HomeFailureContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -192,4 +186,15 @@ export const RetryButton = styled.button`
   cursor: pointer;
   border-radius: 4px;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+`
+export const HomeSectionVideosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  overflow-x: none;
+  margin-top: 10px;
+  width: 100%;
+  height: 70vh;
 `
