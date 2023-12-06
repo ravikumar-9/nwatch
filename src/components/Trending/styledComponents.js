@@ -165,3 +165,6 @@ export const TrendingHeading = styled.h1`
     margin-left: 10px;
   }
 `
+export const Trending = styled.div`
+  display: flex;
+`
