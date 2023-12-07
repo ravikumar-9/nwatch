@@ -6,6 +6,10 @@ import Loader from 'react-loader-spinner'
 
 import ReactPlayer from 'react-player'
 
+import {formatDistanceToNow} from 'date-fns'
+
+import {AiFillLike, AiFillDislike} from 'react-icons/ai'
+
 import WatchContext from '../../context/WatchContext'
 
 import Header from '../Header'
@@ -25,6 +29,13 @@ import {
   SpecificVideoFailureDescription,
   RetryButton,
   SpecificVideoDetailsContainer,
+  SpecificVideoTitle,
+  ViewsAndLikeContainer,
+  ViewsAndDateContainer,
+  ViewsAndDateText,
+  LikeAndDislikeContainer,
+  LikeButton,
+  DisLikeButton,
 } from './styledComponents'
 
 const specificVideoApIStatusConstants = {
@@ -38,6 +49,8 @@ class VideoItemDetails extends Component {
   state = {
     specificVideoApiStatus: specificVideoApIStatusConstants.initial,
     specificVideoDetailsList: [],
+    isLiked: false,
+    isDisLiked: false,
   }
 
   componentDidMount() {
@@ -75,7 +88,7 @@ class VideoItemDetails extends Component {
         publishedAt: videoResponseData.video_details.published_at,
         thumbnailUrl: videoResponseData.video_details.thumbnail_url,
         videoUrl: videoResponseData.video_details.video_url,
-        viewCount: videoResponseData.video_details.viewCount,
+        viewCount: videoResponseData.video_details.view_count,
         channel: {
           name: videoResponseData.video_details.channel.name,
           profileImageUrl:
@@ -100,6 +113,27 @@ class VideoItemDetails extends Component {
 
   onClickRetry = () => {
     this.getSpecificVideoDetails()
+  }
+
+  onClickLikeButton = () => {
+    const {isDisLiked} = this.state
+    if (isDisLiked === true) {
+      this.setState({isDisLiked: false})
+      this.setState(prev => ({isLiked: !prev.isLiked}))
+    } else {
+      this.setState(prev => ({isLiked: !prev.isLiked}))
+    }
+  }
+
+  onClickDislikeButton = () => {
+    const {isLiked} = this.state
+
+    if (isLiked === true) {
+      this.setState({isLiked: false})
+      this.setState(prev => ({isDisLiked: !prev.isDisLiked}))
+    } else {
+      this.setState(prev => ({isDisLiked: !prev.isDisLiked}))
+    }
   }
 
   renderSpecificVideoLoader = () => (
@@ -144,14 +178,65 @@ class VideoItemDetails extends Component {
         console.log(isDarkTheme)
         console.log(savedVideosList)
 
-        const {specificVideoDetailsList} = this.state
+        const {specificVideoDetailsList, isLiked, isDisLiked} = this.state
 
-        const {videoUrl} = specificVideoDetailsList
+        const LikeIconColor = isLiked ? '#2563eb' : '#64748b'
+
+        const DisLikeIconColor = isDisLiked ? '#2563eb' : '#64748b'
+
+        const {
+          videoUrl,
+          title,
+          viewCount,
+          publishedAt,
+        } = specificVideoDetailsList
+
+        const splitted = publishedAt.split(' ')
+        console.log(splitted)
+        const year = splitted[2]
+        const month = splitted[0]
+        const dateLength = splitted[1].length
+        const date = splitted[1].slice(-dateLength, -1)
+
+        const formattedDate = formatDistanceToNow(
+          new Date(`${year}-${month}-${date}`),
+        )
+
+        const s = formattedDate.split(' ').slice(1)
 
         return (
-          <div className="responsive-container">
-            <ReactPlayer url={videoUrl} controls />
-          </div>
+          <SpecificVideoDetailsContainer>
+            <div className="responsive-container">
+              <ReactPlayer url={videoUrl} controls width="100%" />
+            </div>
+            <SpecificVideoTitle theme={isDarkTheme}>{title}</SpecificVideoTitle>
+            <ViewsAndLikeContainer>
+              <ViewsAndDateContainer>
+                <ViewsAndDateText theme={isDarkTheme}>
+                  {viewCount} views
+                </ViewsAndDateText>
+                <ViewsAndDateText theme={isDarkTheme}>
+                  • {s.join(' ')} ago
+                </ViewsAndDateText>
+              </ViewsAndDateContainer>
+              <LikeAndDislikeContainer>
+                <LikeButton
+                  type="button"
+                  theme={isLiked}
+                  onClick={this.onClickLikeButton}
+                >
+                  <AiFillLike color={LikeIconColor} size="19" /> Like
+                </LikeButton>
+                <DisLikeButton
+                  type="button"
+                  theme={isDisLiked}
+                  onClick={this.onClickDislikeButton}
+                >
+                  <AiFillDislike color={DisLikeIconColor} size="19" /> DisLike
+                </DisLikeButton>
+              </LikeAndDislikeContainer>
+            </ViewsAndLikeContainer>
+          </SpecificVideoDetailsContainer>
         )
       }}
     </WatchContext.Consumer>

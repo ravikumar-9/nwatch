@@ -1,10 +1,16 @@
 @media screen and (min-width: 576px) {
   .responsive-container {
-    width: 640px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media screen and (max-width: 575px) {
   .responsive-container {
-    width: 640px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

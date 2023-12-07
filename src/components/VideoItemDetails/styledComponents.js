@@ -116,3 +116,92 @@ export const SpecificVideoDetailsContainer = styled.div`
   width: 100%;
   background-color: transparent;
 `
+export const SpecificVideoTitle = styled.h1`
+  font-weight: bold;
+  text-align: start;
+  align-self: flex-start;
+  margin-left: 1%;
+  color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
+  @media screen and (min-width: 576px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 14px;
+  }
+`
+export const ViewsAndLikeContainer = styled.div`
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+  }
+  @media screen and (max-width: 575px) {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+  }
+`
+export const ViewsAndDateContainer = styled.div`
+  background-color: transparent;
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+  }
+  @media screen and (max-width: 575px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+  }
+`
+export const LikeAndDislikeContainer = styled.div`
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+  }
+  @media screen and (max-width: 575px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+  }
+`
+export const ViewsAndDateText = styled.p`
+  color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
+  @media screen and (min-width: 576px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 11px;
+  }
+`
+
+export const LikeButton = styled.button`
+  height: 34px;
+  width: max-content;
+  border: none;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: center;
+  color: ${props => (props.theme === true ? '#2563eb' : '#64748b')};
+`
+export const DisLikeButton = styled.button`
+  height: 34px;
+  width: max-content;
+  border: none;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: center;
+  color: ${props => (props.theme === true ? '#2563eb' : '#64748b')};
+`
