@@ -108,21 +108,11 @@ export const RetryButton = styled.button`
   border-radius: 4px;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `
-export const TrendingSectionVideosContainer = styled.div`
+export const SpecificVideoDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
-  overflow-x: none;
-  margin-top: 10px;
-  background-color: transparent;
-  width: 100%;
   height: 90vh;
-  @media screen and (min-width: 576px) {
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+  width: 100%;
+  background-color: transparent;
 `

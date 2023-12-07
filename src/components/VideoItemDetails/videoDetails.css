@@ -1,0 +1,10 @@
+@media screen and (min-width: 576px) {
+  .responsive-container {
+    width: 640px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .responsive-container {
+    width: 640px;
+  }
+}

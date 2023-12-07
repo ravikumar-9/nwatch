@@ -4,11 +4,15 @@ import Cookies from 'js-cookie'
 
 import Loader from 'react-loader-spinner'
 
+import ReactPlayer from 'react-player'
+
 import WatchContext from '../../context/WatchContext'
 
 import Header from '../Header'
 
 import Sidebar from '../Sidebar'
+
+import './videoDetails.css'
 
 import {
   SpecificVideoSectionMainContainer,
@@ -20,6 +24,7 @@ import {
   SpecificVideoFailureHeading,
   SpecificVideoFailureDescription,
   RetryButton,
+  SpecificVideoDetailsContainer,
 } from './styledComponents'
 
 const specificVideoApIStatusConstants = {
@@ -131,6 +136,27 @@ class VideoItemDetails extends Component {
     </>
   )
 
+  renderSpecificVideoSuccessView = () => (
+    <WatchContext.Consumer>
+      {value => {
+        const {isDarkTheme, savedVideosList} = value
+
+        console.log(isDarkTheme)
+        console.log(savedVideosList)
+
+        const {specificVideoDetailsList} = this.state
+
+        const {videoUrl} = specificVideoDetailsList
+
+        return (
+          <div className="responsive-container">
+            <ReactPlayer url={videoUrl} controls />
+          </div>
+        )
+      }}
+    </WatchContext.Consumer>
+  )
+
   renderSpecificVideoDetails = isDarkTheme => {
     const {specificVideoApiStatus} = this.state
 
@@ -140,6 +166,9 @@ class VideoItemDetails extends Component {
 
       case specificVideoApIStatusConstants.failure:
         return this.renderSpecificVideoFailureView(isDarkTheme)
+
+      case specificVideoApIStatusConstants.success:
+        return this.renderSpecificVideoSuccessView(isDarkTheme)
 
       default:
         return null
