@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const TrendingSectionMainContainer = styled.div`
+export const GamingSectionMainContainer = styled.div`
   @media screen and (min-width: 576px) {
     display: flex;
     width: 100%;
@@ -29,7 +29,7 @@ export const SidebarContainer = styled.div`
   }
 `
 
-export const TrendingSectionContainer = styled.div`
+export const GamingSectionContainer = styled.div`
   background-color: transparent;
   @media screen and (min-width: 576px) {
     display: flex;
@@ -56,16 +56,16 @@ export const LoaderContainer = styled.div`
   margin-left: auto;
 `
 
-export const TrendingFailureContainer = styled.div`
+export const GamingFailureContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   background-color: ${props => (props.theme === true ? '#181818' : '#f9f9f9')};
 `
-export const TrendingFailureImage = styled.img`
+export const GamingFailureImage = styled.img`
   @media screen and (min-width: 576px) {
     height: 180px;
     width: 200px;
@@ -77,9 +77,9 @@ export const TrendingFailureImage = styled.img`
     margin-bottom: 10px;
   }
 `
-export const TrendingFailureHeading = styled.h1`
+export const GamingFailureHeading = styled.h1`
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 0.6;
   @media screen and (min-width: 576px) {
     font-size: 24px;
   }
@@ -90,11 +90,11 @@ export const TrendingFailureHeading = styled.h1`
   text-align: center;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `
-export const TrendingFailureDescription = styled.p`
+export const GamingFailureDescription = styled.p`
   font-size: 14px;
   text-align: center;
   width: 70%;
-  line-height: 0.6;
+  line-height: 1.2;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `
 export const RetryButton = styled.button`
@@ -108,7 +108,7 @@ export const RetryButton = styled.button`
   border-radius: 4px;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `
-export const TrendingSectionVideosContainer = styled.div`
+export const GamingSectionVideosContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +126,7 @@ export const TrendingSectionVideosContainer = styled.div`
     justify-content: center;
   }
 `
-export const TrendingBarContainer = styled.div`
+export const GamingBarContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
@@ -134,7 +134,7 @@ export const TrendingBarContainer = styled.div`
   background-color: ${props =>
     props.theme === true ? '#181818' : '#ebebeb'}; ;
 `
-export const TrendingLogoContainer = styled.div`
+export const GamingLogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +153,7 @@ export const TrendingLogoContainer = styled.div`
   }
 `
 
-export const TrendingHeading = styled.h1`
+export const GamingHeading = styled.h1`
   font-weight: bold;
   color: ${props => (props.theme === true ? '#ffffff' : '#181818')};
   @media screen and (min-width: 576px) {
@@ -164,7 +164,4 @@ export const TrendingHeading = styled.h1`
     font-size: 16px;
     margin-left: 10px;
   }
-`
-export const Trending = styled.div`
-  display: flex;
 `

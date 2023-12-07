@@ -6,9 +6,9 @@ import {TiHome} from 'react-icons/ti'
 
 import {AiFillFire} from 'react-icons/ai'
 
-import {GrGamepad} from 'react-icons/gr'
-
 import {HiOutlineSaveAs} from 'react-icons/hi'
+
+import {IoGameController} from 'react-icons/io5'
 
 import WatchContext from '../../context/WatchContext'
 
@@ -83,7 +83,7 @@ class Sidebar extends Component {
                     }
                   >
                     <SidebarItemContainer>
-                      <GrGamepad
+                      <IoGameController
                         height={40}
                         width={40}
                         size={24}

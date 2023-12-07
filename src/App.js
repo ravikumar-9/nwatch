@@ -12,6 +12,8 @@ import Home from './components/Home'
 
 import Trending from './components/Trending'
 
+import Gaming from './components/Gaming'
+
 import NotFound from './components/NotFound'
 
 import './App.css'
@@ -35,6 +37,7 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/trending" component={Trending} />
+          <ProtectedRoute exact path="/gaming" component={Gaming} />
           <NotFound component={NotFound} />
         </Switch>
       </WatchContext.Provider>
