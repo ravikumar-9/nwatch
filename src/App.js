@@ -14,6 +14,8 @@ import Trending from './components/Trending'
 
 import Gaming from './components/Gaming'
 
+import VideoItemDetails from './components/VideoItemDetails'
+
 import NotFound from './components/NotFound'
 
 import './App.css'
@@ -38,6 +40,11 @@ class App extends Component {
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/trending" component={Trending} />
           <ProtectedRoute exact path="/gaming" component={Gaming} />
+          <ProtectedRoute
+            exact
+            path="/videos/:id"
+            component={VideoItemDetails}
+          />
           <NotFound component={NotFound} />
         </Switch>
       </WatchContext.Provider>
