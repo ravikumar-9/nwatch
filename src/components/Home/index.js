@@ -172,7 +172,7 @@ class Home extends Component {
               No Search results found
             </NoSearchResultsHeading>
             <NoSearchResultsDescription theme={isDarkTheme}>
-              Try different keywords or remove search filter
+              Try different key words or remove search filter
             </NoSearchResultsDescription>
             <RetryButton
               type="button"
@@ -247,7 +247,10 @@ class Home extends Component {
                       themeColor={isDarkTheme}
                       onChange={this.onChangeSearchInput}
                     />
-                    <SearchIconButton onClick={this.onClickSearchIcon}>
+                    <SearchIconButton
+                      onClick={this.onClickSearchIcon}
+                      data-testid="searchButton"
+                    >
                       <BiSearchAlt2 size="24" />
                     </SearchIconButton>
                   </SearchBarContainer>

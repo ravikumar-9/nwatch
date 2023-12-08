@@ -46,7 +46,7 @@ export const VideoDetailsContainer = styled.div`
   flex-direction: column;
   width: 80%;
 `
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   font-weight: bold;
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
   @media screen and (min-width: 768px) {
@@ -59,7 +59,7 @@ export const VideoTitle = styled.h1`
     font-size: 12px;
   }
 `
-export const ChannelName = styled.h1`
+export const ChannelName = styled.p`
   font-weight: bold;
   line-height: 0.6;
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};

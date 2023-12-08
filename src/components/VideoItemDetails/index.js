@@ -167,7 +167,7 @@ class VideoItemDetails extends Component {
           Oops! Something Went Wrong
         </SpecificVideoFailureHeading>
         <SpecificVideoFailureDescription theme={isDarkTheme}>
-          We are having some trouble.
+          We are having some trouble to complete your request. Please try again.
         </SpecificVideoFailureDescription>
         <RetryButton
           type="button"
