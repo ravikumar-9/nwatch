@@ -12,7 +12,7 @@ export const SavedVideoThumbnailImage = styled.img`
   height: 100%;
   margin-right: 7px;
 `
-export const SavedVideoTitle = styled.h1`
+export const SavedVideoTitle = styled.p`
   font-weight: bold;
   color: ${props => (props.theme === true ? '#ffffff' : '#0f0f0f')};
   @media screen and (min-width: 576px) {
