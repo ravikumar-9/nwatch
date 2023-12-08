@@ -117,7 +117,7 @@ export const SpecificVideoDetailsContainer = styled.div`
   background-color: transparent;
   overflow-y: auto;
 `
-export const SpecificVideoTitle = styled.h1`
+export const SpecificVideoTitle = styled.p`
   font-weight: bold;
   text-align: start;
   align-self: flex-start;
@@ -265,7 +265,7 @@ export const ChannelLogo = styled.img`
     width: 40px;
   }
 `
-export const ChannelName = styled.h1`
+export const ChannelName = styled.p`
   font-weight: bold;
   line-height: 0.9;
   color: ${props => (props.theme === true ? '#ffffff' : '#010101')};

@@ -29,7 +29,7 @@ export const ChannelDetailsContainer = styled.div`
   margin-left: 7px;
 `
 
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   font-weight: bold;
   line-height: 0.9;
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
