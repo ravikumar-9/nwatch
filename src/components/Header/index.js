@@ -32,6 +32,7 @@ import {
   SmallDeviceThemeButton,
   HamburgerButton,
   SmallDeviceLogoutButton,
+  Popups,
 } from './styledComponents'
 
 const Header = props => (
@@ -90,15 +91,19 @@ const Header = props => (
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
                 alt="profile"
               />
-              <PopupContainer>
+              <PopupContainer theme={isDarkTheme}>
                 <Popup
                   modal
-                  trigger={<LogoutButton type="button">Logout</LogoutButton>}
+                  trigger={
+                    <LogoutButton type="button" theme={isDarkTheme}>
+                      Logout
+                    </LogoutButton>
+                  }
                 >
                   {close => (
-                    <>
+                    <Popups>
                       <div>
-                        <PopupDescription>
+                        <PopupDescription theme={isDarkTheme}>
                           Are you sure, you want to logout
                         </PopupDescription>
                       </div>
@@ -110,11 +115,15 @@ const Header = props => (
                         >
                           Cancel
                         </CancelButton>
-                        <ConfirmButton type="button" onClick={onLogout}>
+                        <ConfirmButton
+                          type="button"
+                          onClick={onLogout}
+                          theme={isDarkTheme}
+                        >
                           Confirm
                         </ConfirmButton>
                       </LogoutButtonsContainer>
-                    </>
+                    </Popups>
                   )}
                 </Popup>
               </PopupContainer>
@@ -178,7 +187,7 @@ const Header = props => (
                   }
                 >
                   {close => (
-                    <>
+                    <Popups>
                       <div>
                         <PopupDescription>
                           Are you sure, you want to logout
@@ -196,7 +205,7 @@ const Header = props => (
                           Confirm
                         </ConfirmButton>
                       </LogoutButtonsContainer>
-                    </>
+                    </Popups>
                   )}
                 </Popup>
               </PopupContainer>

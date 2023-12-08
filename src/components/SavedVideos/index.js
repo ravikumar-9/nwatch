@@ -4,6 +4,8 @@ import Header from '../Header'
 
 import Sidebar from '../Sidebar'
 
+import SavedVideoItem from '../SavedVideoItem'
+
 import WatchContext from '../../context/WatchContext'
 
 import {
@@ -17,6 +19,7 @@ import {
   SavedVideosBarContainer,
   SavedVideoLogoContainer,
   SavedVideoHeading,
+  SavedVideosListContainer,
 } from './styledComponents'
 
 const SavedVideos = props => {
@@ -54,14 +57,25 @@ const SavedVideos = props => {
                     </NoSavedVideosDescription>
                   </NoSavedVideosContainer>
                 ) : (
-                  <SavedVideosBarContainer theme={isDarkTheme}>
-                    <SavedVideoLogoContainer theme={isDarkTheme}>
-                      <HiOutlineSaveAs size="24" color="red" />
-                    </SavedVideoLogoContainer>
-                    <SavedVideoHeading theme={isDarkTheme}>
-                      Saved Videos
-                    </SavedVideoHeading>
-                  </SavedVideosBarContainer>
+                  <>
+                    <SavedVideosBarContainer theme={isDarkTheme}>
+                      <SavedVideoLogoContainer theme={isDarkTheme}>
+                        <HiOutlineSaveAs size="24" color="red" />
+                      </SavedVideoLogoContainer>
+                      <SavedVideoHeading theme={isDarkTheme}>
+                        Saved Videos
+                      </SavedVideoHeading>
+                    </SavedVideosBarContainer>
+                    <SavedVideosListContainer>
+                      {savedVideosList.map(eachVideo => (
+                        <SavedVideoItem
+                          videoDetails={eachVideo}
+                          key={eachVideo.id}
+                          themeDetails={isDarkTheme}
+                        />
+                      ))}
+                    </SavedVideosListContainer>
+                  </>
                 )}
               </SavedVideoSectionContainer>
             </SavedVideoSectionMainContainer>

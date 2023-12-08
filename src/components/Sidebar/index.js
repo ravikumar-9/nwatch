@@ -50,7 +50,7 @@ class Sidebar extends Component {
                       <TiHome
                         height={40}
                         width={40}
-                        color={url === '/' ? 'red' : 'black'}
+                        color={url === '/' ? 'red' : '#64748b'}
                         size={24}
                       />
                       <SidebarItemHeading theme={isDarkTheme}>
@@ -69,7 +69,7 @@ class Sidebar extends Component {
                         height={40}
                         width={40}
                         size={24}
-                        color={url === '/trending' ? 'red' : 'black'}
+                        color={url === '/trending' ? 'red' : '#64748b'}
                       />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Trending
@@ -87,7 +87,7 @@ class Sidebar extends Component {
                         height={40}
                         width={40}
                         size={24}
-                        color={url === '/gaming' ? 'red' : 'black'}
+                        color={url === '/gaming' ? 'red' : '#64748b'}
                       />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Gaming
@@ -105,7 +105,7 @@ class Sidebar extends Component {
                         height={40}
                         width={40}
                         size={24}
-                        color={url === '/saved-videos' ? 'red' : 'black'}
+                        color={url === '/saved-videos' ? 'red' : '#64748b'}
                       />
                       <SidebarItemHeading theme={isDarkTheme}>
                         Saved Videos

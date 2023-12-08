@@ -70,9 +70,9 @@ export const ConfirmButton = styled.button`
   background-color: blue;
   border: none;
   cursor: pointer;
-  color: white;
   margin: 5px;
   border-radius: 3px;
+  color: white;
 `
 
 export const CancelButton = styled.button`
@@ -150,4 +150,12 @@ export const SmallDevicePopContainer = styled.div`
   border: none;
   height: 50px;
   margin: 0px;
+`
+export const Popups = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: 130px;
+  width: 300px;
 `

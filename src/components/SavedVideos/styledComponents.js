@@ -124,12 +124,13 @@ export const NoSavedVideosDescription = styled.p`
   font-size: 14px;
   text-align: center;
   width: 70%;
-  line-height: 0.6;
+  line-height: 1.2;
   color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
 `
-export const SavedVideosListContainer = styled.ul`
+export const SavedVideosListContainer = styled.div`
   list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 98%;
 `
