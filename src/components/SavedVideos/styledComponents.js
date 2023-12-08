@@ -133,4 +133,6 @@ export const SavedVideosListContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 98%;
+  height: 90vh;
+  overflow-y: auto;
 `
