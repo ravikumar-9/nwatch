@@ -10,6 +10,8 @@ import {formatDistanceToNow} from 'date-fns'
 
 import {AiFillLike, AiFillDislike} from 'react-icons/ai'
 
+import {HiOutlineSaveAs} from 'react-icons/hi'
+
 import WatchContext from '../../context/WatchContext'
 
 import Header from '../Header'
@@ -36,6 +38,14 @@ import {
   LikeAndDislikeContainer,
   LikeButton,
   DisLikeButton,
+  SaveButton,
+  HorizontalLine,
+  ChannelLogoNameContainer,
+  ChannelLogo,
+  ChannelName,
+  SubscriberCountText,
+  VideoDescriptionText,
+  UnSaveButton,
 } from './styledComponents'
 
 const specificVideoApIStatusConstants = {
@@ -97,7 +107,7 @@ class VideoItemDetails extends Component {
             videoResponseData.video_details.channel.subscriber_count,
         },
       }
-      console.log(updatedVideoDetails)
+      // console.log(updatedVideoDetails)
 
       this.setState({
         specificVideoApiStatus: specificVideoApIStatusConstants.success,
@@ -173,10 +183,7 @@ class VideoItemDetails extends Component {
   renderSpecificVideoSuccessView = () => (
     <WatchContext.Consumer>
       {value => {
-        const {isDarkTheme, savedVideosList} = value
-
-        console.log(isDarkTheme)
-        console.log(savedVideosList)
+        const {isDarkTheme, savedVideosList, saveVideo, deleteVideo} = value
 
         const {specificVideoDetailsList, isLiked, isDisLiked} = this.state
 
@@ -189,7 +196,12 @@ class VideoItemDetails extends Component {
           title,
           viewCount,
           publishedAt,
+          channel,
+          description,
+          id,
         } = specificVideoDetailsList
+
+        const {profileImageUrl, subscriberCount, name} = channel
 
         const splitted = publishedAt.split(' ')
         console.log(splitted)
@@ -204,6 +216,26 @@ class VideoItemDetails extends Component {
 
         const s = formattedDate.split(' ').slice(1)
 
+        // console.log(savedVideosList)
+
+        let isSaved = false
+
+        if (savedVideosList.length !== 0) {
+          const savedItem = savedVideosList.find(each => id === each.id)
+          if (savedItem) {
+            isSaved = true
+          }
+        }
+
+        console.log(isSaved)
+
+        const onClickSaveButton = () => {
+          saveVideo(specificVideoDetailsList)
+        }
+
+        const onClickUnsaveButton = () => {
+          deleteVideo(id)
+        }
         return (
           <SpecificVideoDetailsContainer>
             <div className="responsive-container">
@@ -234,8 +266,30 @@ class VideoItemDetails extends Component {
                 >
                   <AiFillDislike color={DisLikeIconColor} size="19" /> DisLike
                 </DisLikeButton>
+                {isSaved ? (
+                  <UnSaveButton type="button" onClick={onClickUnsaveButton}>
+                    <HiOutlineSaveAs size="19" color="#2563eb" /> Saved
+                  </UnSaveButton>
+                ) : (
+                  <SaveButton type="button" onClick={onClickSaveButton}>
+                    <HiOutlineSaveAs size="19" color="#64748b" /> Save
+                  </SaveButton>
+                )}
               </LikeAndDislikeContainer>
             </ViewsAndLikeContainer>
+            <HorizontalLine />
+            <ChannelLogoNameContainer>
+              <ChannelLogo src={profileImageUrl} alt="channel logo" />
+              <div>
+                <ChannelName theme={isDarkTheme}>{name}</ChannelName>
+                <SubscriberCountText theme={isDarkTheme}>
+                  {subscriberCount} subscribers
+                </SubscriberCountText>
+              </div>
+            </ChannelLogoNameContainer>
+            <VideoDescriptionText theme={isDarkTheme}>
+              {description}
+            </VideoDescriptionText>
           </SpecificVideoDetailsContainer>
         )
       }}
@@ -261,8 +315,6 @@ class VideoItemDetails extends Component {
   }
 
   render() {
-    const {specificVideoDetailsList} = this.state
-    console.log(specificVideoDetailsList)
     return (
       <WatchContext.Consumer>
         {value => {

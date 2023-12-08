@@ -115,6 +115,7 @@ export const SpecificVideoDetailsContainer = styled.div`
   height: 90vh;
   width: 100%;
   background-color: transparent;
+  overflow-y: auto;
 `
 export const SpecificVideoTitle = styled.h1`
   font-weight: bold;
@@ -154,7 +155,7 @@ export const ViewsAndDateContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 35%;
+    width: 40%;
   }
 `
 export const LikeAndDislikeContainer = styled.div`
@@ -162,13 +163,15 @@ export const LikeAndDislikeContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
+    margin-top: 10px;
   }
   @media screen and (max-width: 575px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 67%;
+    margin-top: 7px;
   }
 `
 export const ViewsAndDateText = styled.p`
@@ -204,4 +207,92 @@ export const DisLikeButton = styled.button`
   background-color: transparent;
   text-align: center;
   color: ${props => (props.theme === true ? '#2563eb' : '#64748b')};
+`
+export const SaveButton = styled.button`
+  height: 34px;
+  width: max-content;
+  border: none;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: center;
+  color: #64748b;
+`
+export const UnSaveButton = styled.button`
+  height: 34px;
+  width: max-content;
+  border: none;
+  display: flex;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: center;
+  color: #2563eb;
+`
+export const HorizontalLine = styled.hr`
+  width: 97%;
+  color: #94a3b8;
+  height: 1px;
+  margin-top: 10px;
+`
+export const ChannelLogoNameContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  justify-content: space-between;
+  background-color: transparent;
+  align-self: flex-start;
+
+  @media screen and (min-width: 576px) {
+    margin-top: 12px;
+  }
+  @media screen and (max-width: 575px) {
+    margin-top: 7px;
+  }
+`
+
+export const ChannelLogo = styled.img`
+  margin-right: 10px;
+  @media screen and (min-width: 576px) {
+    height: 40px;
+    width: 40px;
+  }
+  @media screen and (max-width: 575px) {
+    height: 30px;
+    width: 40px;
+  }
+`
+export const ChannelName = styled.h1`
+  font-weight: bold;
+  line-height: 0.9;
+  color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
+  @media screen and (min-width: 576px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 14px;
+  }
+`
+export const SubscriberCountText = styled.p`
+  color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
+  line-height: 0.7;
+  @media screen and (min-width: 576px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 14px;
+  }
+`
+export const VideoDescriptionText = styled.p`
+  color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
+  margin-left: 2%;
+  @media screen and (min-width: 576px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 11px;
+  }
 `

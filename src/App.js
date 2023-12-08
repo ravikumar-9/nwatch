@@ -22,18 +22,39 @@ import './App.css'
 
 // Replace your code here
 class App extends Component {
-  state = {isDarkTheme: false}
+  state = {isDarkTheme: false, savedVideosList: []}
 
   changeTheme = () => {
     this.setState(prev => ({isDarkTheme: !prev.isDarkTheme}))
   }
 
+  saveVideo = videoDetails => {
+    console.log(videoDetails)
+    this.setState(prev => ({
+      savedVideosList: [...prev.savedVideosList, videoDetails],
+    }))
+  }
+
+  deleteVideo = videoId => {
+    const {savedVideosList} = this.state
+    const updatedSavedVideosList = savedVideosList.filter(
+      eachVideo => eachVideo.id !== videoId,
+    )
+    this.setState({savedVideosList: updatedSavedVideosList})
+  }
+
   render() {
-    const {isDarkTheme} = this.state
+    const {isDarkTheme, savedVideosList} = this.state
 
     return (
       <WatchContext.Provider
-        value={{isDarkTheme, changeTheme: this.changeTheme}}
+        value={{
+          isDarkTheme,
+          changeTheme: this.changeTheme,
+          savedVideosList,
+          saveVideo: this.saveVideo,
+          deleteVideo: this.deleteVideo,
+        }}
       >
         <Switch>
           <Route exact path="/login" component={Login} />
