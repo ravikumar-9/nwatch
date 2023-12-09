@@ -15,7 +15,7 @@ export const LargeDeviceThemeContainer = styled.div`
   display: flex;
   align-items: center;
   width: 30%;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: transparent;
   margin-right: 14px;
 `
@@ -48,15 +48,7 @@ export const ProfileImage = styled.img`
   height: 34px;
   width: 40px;
 `
-export const PopupContainer = styled.div`
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  width: 100px;
-  padding: 4px;
-`
+export const PopupContainer = styled.div``
 
 export const PopupDescription = styled.p`
   font-weight: bold;
@@ -118,7 +110,7 @@ export const SmallDeviceThemesContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 12px;
 `
 export const SmallDeviceThemeButton = styled.button`
   height: max-content;
@@ -132,7 +124,6 @@ export const HamburgerButton = styled.button`
   width: max-content;
   border: none;
   outline: none;
-  margin-left: 15px;
   background-color: transparent;
 `
 export const SmallDeviceLogoutButton = styled.button`
@@ -158,4 +149,44 @@ export const Popups = styled.div`
   background-color: white;
   height: 130px;
   width: 300px;
+`
+export const SmallDeviceMenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+`
+export const SidebarItemContainer = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  list-style-type: none;
+  margin-bottom: 4px;
+  margin-left: 7px;
+  margin-right: 7px;
+`
+
+export const SidebarItemHeading = styled.h1`
+  font-weight: bold;
+  @media screen and (min-width: 576px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
+  }
+  color: ${props => (props.theme === true ? '#f9f9f9' : '#181818')};
+  padding-left: 9px;
+`
+export const SidebarItemsContainer = styled.nav`
+  height: 30%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
 `

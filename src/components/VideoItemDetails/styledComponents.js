@@ -289,6 +289,7 @@ export const SubscriberCountText = styled.p`
 export const VideoDescriptionText = styled.p`
   color: ${props => (props.theme === true ? '#ffffff' : '#010101')};
   margin-left: 2%;
+  align-self: flex-start;
   @media screen and (min-width: 576px) {
     font-size: 12px;
   }

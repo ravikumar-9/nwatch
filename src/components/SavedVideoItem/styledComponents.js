@@ -7,10 +7,17 @@ export const SavedVideoItems = styled.li`
   height: 230px;
   margin-top: 9px;
 `
-export const SavedVideoThumbnailImage = styled.img`
+
+export const SavedVideoThumbnailContainer = styled.div`
   width: 48%;
-  height: 100%;
   margin-right: 7px;
+  display: flex;
+`
+export const SavedVideoThumbnailImage = styled.img`
+  width:400px;
+  height:200px;
+  flex-grow:1;
+  }
 `
 export const SavedVideoTitle = styled.p`
   font-weight: bold;

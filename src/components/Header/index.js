@@ -33,6 +33,10 @@ import {
   HamburgerButton,
   SmallDeviceLogoutButton,
   Popups,
+  SmallDeviceMenuContainer,
+  SidebarItemsContainer,
+  SidebarItemContainer,
+  SidebarItemHeading,
 } from './styledComponents'
 
 const Header = props => (
@@ -165,13 +169,30 @@ const Header = props => (
                   <FaMoon color="black" size="20" />
                 </SmallDeviceThemeButton>
               )}
-              <HamburgerButton>
-                {isDarkTheme ? (
-                  <GiHamburgerMenu color="white" size="20" />
-                ) : (
-                  <GiHamburgerMenu color="black" size="20" />
-                )}
-              </HamburgerButton>
+
+              <Popup
+                trigger={
+                  <HamburgerButton>
+                    {isDarkTheme ? (
+                      <GiHamburgerMenu color="white" size="20" />
+                    ) : (
+                      <GiHamburgerMenu color="black" size="20" />
+                    )}
+                  </HamburgerButton>
+                }
+                position="bottom right"
+              >
+                <SmallDeviceMenuContainer>
+                  <SidebarItemsContainer>
+                    <Link to="/saved-videos">
+                      <SidebarItemContainer>
+                        <SidebarItemHeading>home</SidebarItemHeading>
+                        <SidebarItemHeading>h</SidebarItemHeading>
+                      </SidebarItemContainer>
+                    </Link>
+                  </SidebarItemsContainer>
+                </SmallDeviceMenuContainer>
+              </Popup>
 
               <PopupContainer>
                 <Popup

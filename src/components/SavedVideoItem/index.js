@@ -6,6 +6,7 @@ import './savedVideoItem.css'
 
 import {
   SavedVideoItems,
+  SavedVideoThumbnailContainer,
   SavedVideoThumbnailImage,
   SavedVideoTitle,
   SavedVideoChannelName,
@@ -45,7 +46,9 @@ const SavedVideoItem = props => {
   return (
     <SavedVideoItems>
       <Link to={`/videos/${id}`} className="saved-video-nav-link">
-        <SavedVideoThumbnailImage src={thumbnailUrl} alt="video thumbnail" />
+        <SavedVideoThumbnailContainer>
+          <SavedVideoThumbnailImage src={thumbnailUrl} alt="video thumbnail" />
+        </SavedVideoThumbnailContainer>
         <div>
           <SavedVideoTitle theme={themeDetails}>{title}</SavedVideoTitle>
           <SavedVideoChannelName theme={themeDetails}>
