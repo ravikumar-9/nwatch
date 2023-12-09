@@ -23,9 +23,8 @@ const GamingVideoItem = props => {
         <ChannelDetailsContainer>
           <VideoTitle theme={themeDetails}>{title}</VideoTitle>
           <VideoViewsCount theme={themeDetails}>
-            {viewCount} Watching
+            {viewCount} Watching Worldwide
           </VideoViewsCount>
-          <VideoViewsCount theme={themeDetails}>Worldwide</VideoViewsCount>
         </ChannelDetailsContainer>
       </Link>
     </GamingVideoItems>

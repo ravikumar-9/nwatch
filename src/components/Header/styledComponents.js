@@ -154,7 +154,8 @@ export const SmallDeviceMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: #f1f5f9;
+  width: max-content;
 `
 export const SidebarItemContainer = styled.li`
   display: flex;
@@ -173,6 +174,7 @@ export const SidebarItemContainer = styled.li`
 
 export const SidebarItemHeading = styled.h1`
   font-weight: bold;
+
   @media screen and (min-width: 576px) {
     font-size: 13px;
   }

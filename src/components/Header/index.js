@@ -10,7 +10,17 @@ import {FiSun, FiLogOut} from 'react-icons/fi'
 
 import {GiHamburgerMenu} from 'react-icons/gi'
 
+import {TiHome} from 'react-icons/ti'
+
+import {AiFillFire} from 'react-icons/ai'
+
+import {HiOutlineSaveAs} from 'react-icons/hi'
+
+import {IoGameController} from 'react-icons/io5'
+
 import WatchContext from '../../context/WatchContext'
+
+import './header.css'
 
 import {
   LargeDeviceHeader,
@@ -43,6 +53,10 @@ const Header = props => (
   <WatchContext.Consumer>
     {value => {
       const {isDarkTheme, changeTheme} = value
+
+      const {match} = props
+      // console.log(match)
+      const {url} = match
 
       const onChangeTheme = () => {
         changeTheme()
@@ -184,10 +198,58 @@ const Header = props => (
               >
                 <SmallDeviceMenuContainer>
                   <SidebarItemsContainer>
-                    <Link to="/saved-videos">
+                    <Link
+                      to="/"
+                      className={url === '/' ? 'active-tab' : 'inactive-tab'}
+                    >
                       <SidebarItemContainer>
-                        <SidebarItemHeading>home</SidebarItemHeading>
-                        <SidebarItemHeading>h</SidebarItemHeading>
+                        <TiHome
+                          size="14"
+                          color={url === '/' ? 'red' : '#64748b'}
+                        />
+                        <SidebarItemHeading>Home</SidebarItemHeading>
+                      </SidebarItemContainer>
+                    </Link>
+                    <Link
+                      to="/trending"
+                      className={
+                        url === '/trending' ? 'active-tab' : 'inactive-tab'
+                      }
+                    >
+                      <SidebarItemContainer>
+                        <AiFillFire
+                          size="14"
+                          color={url === '/trending' ? 'red' : '#64748b'}
+                        />
+                        <SidebarItemHeading>Trending</SidebarItemHeading>
+                      </SidebarItemContainer>
+                    </Link>
+                    <Link
+                      to="/gaming"
+                      className={
+                        url === '/gaming' ? 'active-tab' : 'inactive-tab'
+                      }
+                    >
+                      <SidebarItemContainer>
+                        <IoGameController
+                          size="14"
+                          color={url === '/gaming' ? 'red' : '#64748b'}
+                        />
+                        <SidebarItemHeading>Gaming</SidebarItemHeading>
+                      </SidebarItemContainer>
+                    </Link>
+                    <Link
+                      to="/saved-videos"
+                      className={
+                        url === '/saved-videos' ? 'active-tab' : 'inactive-tab'
+                      }
+                    >
+                      <SidebarItemContainer>
+                        <HiOutlineSaveAs
+                          size="14"
+                          color={url === '/saved-videos' ? 'red' : '#64748b'}
+                        />
+                        <SidebarItemHeading>Saved Videos</SidebarItemHeading>
                       </SidebarItemContainer>
                     </Link>
                   </SidebarItemsContainer>

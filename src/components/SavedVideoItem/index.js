@@ -12,6 +12,7 @@ import {
   SavedVideoChannelName,
   SavedVideoViewAndDateContainer,
   SavedVideoViewCount,
+  SavedVideoDetailsContainer,
 } from './styledComponents'
 
 const SavedVideoItem = props => {
@@ -49,7 +50,7 @@ const SavedVideoItem = props => {
         <SavedVideoThumbnailContainer>
           <SavedVideoThumbnailImage src={thumbnailUrl} alt="video thumbnail" />
         </SavedVideoThumbnailContainer>
-        <div>
+        <SavedVideoDetailsContainer>
           <SavedVideoTitle theme={themeDetails}>{title}</SavedVideoTitle>
           <SavedVideoChannelName theme={themeDetails}>
             {name}
@@ -63,7 +64,7 @@ const SavedVideoItem = props => {
               • {s.join(' ')} ago
             </SavedVideoViewCount>
           </SavedVideoViewAndDateContainer>
-        </div>
+        </SavedVideoDetailsContainer>
       </Link>
     </SavedVideoItems>
   )

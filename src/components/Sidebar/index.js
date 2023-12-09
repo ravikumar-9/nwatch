@@ -31,7 +31,7 @@ class Sidebar extends Component {
     const {match} = this.props
     // console.log(match)
     const {url} = match
-    console.log(url)
+    // console.log(url)
 
     return (
       <WatchContext.Consumer>

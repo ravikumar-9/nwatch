@@ -8,19 +8,19 @@ export const GamingVideoItems = styled.li`
   list-style-type: none;
   @media screen and (min-width: 576px) {
     width: 46%;
-    height: 270px;
+    height: 250px;
   }
 
   @media screen and (max-width: 575px) {
     width: 98%;
     flex-grow: 4;
     flex-shrink: 0;
-    height: 270px;
+    height: 240px;
   }
 `
 export const GamingThumbnailImage = styled.img`
   width: 100%;
-  height: 170px;
+  height: 180px;
 `
 export const ChannelDetailsContainer = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ export const ChannelDetailsContainer = styled.div`
 
 export const VideoTitle = styled.p`
   font-weight: bold;
-  line-height: 0.9;
+  line-height: 0.6;
   color: ${props => (props.theme === true ? '#f1f1f1' : '#181818')};
   @media screen and (min-width: 768px) {
     font-size: 14px;
